@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // react router
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import FormInput from "../formInput/FormInput.component";
 import "./signup.styles.scss";
@@ -22,6 +22,7 @@ export default function Signup() {
   const [passwordErr, setPasswordErr] = useState("");
   const [confirmPasswordErr, setConfirmPasswordErr] = useState("");
   const [emailErr, setEmailErr] = useState("");
+  const [hideSignupForm, setHideSignupForm] = useState(false);
 
   useEffect(() => {
     document.title = `Sign Up • For babies and toddlers • Twistshake`;
@@ -135,6 +136,8 @@ export default function Signup() {
 
       Axios.post(requests.createAccount, data)
         .then((res) => {
+          setHideSignupForm(res.data.status);
+
           if (res.request.status === 200) {
             setName("");
             setEmail("");
@@ -164,72 +167,83 @@ export default function Signup() {
     <div className="signup">
       <ToastContainer />
       <div className="inner-container">
-        <div className="signup-container">
-          <div className="signup-title">
-            <h2>Create Account</h2>
+        {hideSignupForm ? (
+          <div className="success-msg">
+            <h3 className="msg-text">
+              Your account has been successfully created
+            </h3>
+            <Link to="/login" className="link">
+              Click here to login
+            </Link>
           </div>
-          <div className="form">
-            <form onSubmit={handleSubmit}>
-              <FormInput
-                type="text"
-                name="name"
-                value={name}
-                id="name"
-                className="name"
-                placeholder="Your Name"
-                handleChange={handleChange}
-              />
-              <div className="validationMsg">{nameErr}</div>
-              <FormInput
-                type="text"
-                name="email"
-                value={email}
-                id="user_email"
-                className="email"
-                placeholder="Email"
-                onChange={handleChange}
-              />
-              <div className="validationMsg">{emailErr}</div>
-              <FormInput
-                type="text"
-                name="mobile"
-                value={phone}
-                id="phone"
-                min="0"
-                className="phone"
-                placeholder="Enter your phone"
-                onChange={handleChange}
-              />
-              <div className="validationMsg">{phoneErr}</div>
-              <FormInput
-                type="password"
-                name="password"
-                value={password}
-                placeholder="Password"
-                id="user_password"
-                className="password"
-                onChange={handleChange}
-              />
-              <div className="validationMsg">{passwordErr}</div>
-              <FormInput
-                type="password"
-                name="confirm_password"
-                value={confirmPassword}
-                id="confirm_user_password"
-                className="password"
-                placeholder="Re-enter Password"
-                onChange={handleChange}
-              />
-              <div className="validationMsg">{confirmPasswordErr}</div>
-              <FormInput
-                type="submit"
-                value="Signup"
-                name="signupSubmit"
-                className="signup-btn"
-              />
-            </form>
+        ) : (
+          <div className="signup-container">
+            <div className="signup-title">
+              <h2>Create Account</h2>
+            </div>
+            <div className="form">
+              <form onSubmit={handleSubmit}>
+                <FormInput
+                  type="text"
+                  name="name"
+                  value={name}
+                  id="name"
+                  className="name"
+                  placeholder="Your Name"
+                  handleChange={handleChange}
+                />
+                <div className="validationMsg">{nameErr}</div>
+                <FormInput
+                  type="text"
+                  name="email"
+                  value={email}
+                  id="user_email"
+                  className="email"
+                  placeholder="Email"
+                  onChange={handleChange}
+                />
+                <div className="validationMsg">{emailErr}</div>
+                <FormInput
+                  type="text"
+                  name="mobile"
+                  value={phone}
+                  id="phone"
+                  min="0"
+                  className="phone"
+                  placeholder="Enter your phone"
+                  onChange={handleChange}
+                />
+                <div className="validationMsg">{phoneErr}</div>
+                <FormInput
+                  type="password"
+                  name="password"
+                  value={password}
+                  placeholder="Password"
+                  id="user_password"
+                  className="password"
+                  onChange={handleChange}
+                />
+                <div className="validationMsg">{passwordErr}</div>
+                <FormInput
+                  type="password"
+                  name="confirm_password"
+                  value={confirmPassword}
+                  id="confirm_user_password"
+                  className="password"
+                  placeholder="Re-enter Password"
+                  onChange={handleChange}
+                />
+                <div className="validationMsg">{confirmPasswordErr}</div>
+                <FormInput
+                  type="submit"
+                  value="Signup"
+                  name="signupSubmit"
+                  className="signup-btn"
+                />
+              </form>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

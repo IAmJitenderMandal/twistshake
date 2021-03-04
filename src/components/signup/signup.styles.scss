@@ -1,9 +1,11 @@
 .signup {
   height: 130vh;
   position: relative;
-  background-image: linear-gradient(90deg,
+  background-image: linear-gradient(
+      90deg,
       rgba(0, 0, 0, 0.41) 0%,
-      rgba(0, 0, 0, 0.4066001400560224) 100%),
+      rgba(0, 0, 0, 0.4066001400560224) 100%
+    ),
     url("https://media.twistshake.com/2020/03/25095621/DSC8337.jpg?q=70&fit=clip&w=2000&auto=format");
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -27,16 +29,33 @@
       padding-bottom: 2rem;
       background-color: #fff;
 
-
       .form {
         width: 70%;
         margin: auto;
-
 
         .validationMsg {
           color: rgb(240, 93, 93);
           font-size: 0.7rem;
         }
+      }
+    }
+  }
+
+  .success-msg {
+    text-align: center;
+    margin-top: -10rem;
+    background-color: #f1f1f1;
+    padding: 3rem 2rem;
+    width: 40vw;
+    border-radius: 1rem;
+
+    .link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #202020;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
