@@ -5,7 +5,6 @@ import SpinnerBtn from "../../assets/images/spinnerBtn.png";
 import ArrowBtn from "../../assets/images/icon.png";
 
 export default function LiveShoppingHeader({ children, bgimg }) {
-  console.log(children[0], children[1]);
   return (
     <div className="live-shopping-header">
       <div className="container">

@@ -79,9 +79,7 @@ export default function PackageCustomisation() {
   };
 
   const handlechange = (e, index) => {
-    console.log(e.target.id);
     let subProduct = productState.displayProduct[index];
-    console.log(" sub product ", subProduct.id);
 
     setCoustomizeProductID({ productID: subProduct.id, productIndex: index });
     let setDefaultCoustomizeProduct = subProduct;
@@ -109,7 +107,6 @@ export default function PackageCustomisation() {
   const handleSaveProduct = (saveProductData) => {
     setCoustomizeData([]);
     const saveProdectDataRedux = [];
-    console.log("saved Product", productState.savedProduct);
     if (productState.savedProduct) {
       productState.savedProduct.map((eachItem) => {
         if (
@@ -173,14 +170,6 @@ export default function PackageCustomisation() {
         getCart();
       });
     } else {
-      console.log(product);
-      // var product_color_image = product.product_color_image[0];
-      // for (let i = 0; i < product_color_image.length; i++) {
-      //   console.log(data.cart_item.sku_id, product_color_image[i].sku_id);
-      //   if (data.cart_item.sku_id == product_color_image[i].sku_id) {
-      //     data.cart_item.product_image = product_color_image[i].product_image;
-      //   }
-      // }
       data.cart_item.sku_id = product.sku_id;
       data.cart_item.product_thumbnail = product.product_thumbnail[0];
       data.cart_item.discount = product.discount;
@@ -231,7 +220,6 @@ export default function PackageCustomisation() {
                 </div>
                 {data !== undefined ? (
                   <div className="products">
-                    {console.log(data)}
                     {data.map((eachItem, index) => (
                       <CustomProductCard
                         edit={true}

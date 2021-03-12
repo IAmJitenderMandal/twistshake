@@ -18,7 +18,6 @@ export default function OrderDetail(props) {
   const orderId = params.orderId;
 
   useEffect(() => {
-    console.log(orderId);
     Axios.get(`${requests.orderDetails}/${orderId}`, config).then(
       (response) => {
         var orderDetails = response.data.order_detail;

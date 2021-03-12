@@ -119,7 +119,6 @@ function CheckOutPage() {
     });
   };
   const updateQuantity = (cartIndex, updateQuantity) => {
-    console.log(cartIndex, updateQuantity);
     const data = {
       quantity: updateQuantity,
     };
@@ -134,7 +133,6 @@ function CheckOutPage() {
       var cart = JSON.parse(localStorage.getItem("ts-cart"));
 
       for (let i = 0; i < cart.length; i++) {
-        console.log(cartIndex, cart[i].cart_id);
         if (cartIndex == cart[i].cart_id) {
           cart[i].quantity = updateQuantity;
         }
@@ -272,7 +270,6 @@ function CheckOutPage() {
     }
     if (e.target.id.toLowerCase() === "shipping_charge".toLowerCase()) {
       setshipping_charge(e.target.value);
-      console.log(e.target.innerHTML);
 
       var select_id = document.getElementById("shipping_charge");
 
@@ -321,7 +318,6 @@ function CheckOutPage() {
 
     Axios.post(`${requests.order}`, data, config)
       .then((response) => {
-        console.log(response.data);
         if (response.data.success.status) {
           var orderId = response.data.orders.id;
           window.location.href = `/order-successful/${orderId}`;

@@ -137,7 +137,6 @@ export default function EditAccountForm() {
           type: toast.TYPE.ERROR,
           autoClose: 10000,
         });
-        console.log(err);
       });
   };
 
@@ -161,7 +160,6 @@ export default function EditAccountForm() {
             <span>{email}</span>{" "}
           </div>
           <div className="phone common">
-            {console.log(phone)}
             <span className="key">Phone : </span>{" "}
             <span className="value">{phone}</span>{" "}
           </div>

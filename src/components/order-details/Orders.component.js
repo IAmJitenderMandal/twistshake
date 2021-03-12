@@ -1,4 +1,4 @@
-import React, { useReducer, useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./orders.styles.scss";
 import Button from "../button/Button.component";
 import { Link } from "react-router-dom";
@@ -28,10 +28,8 @@ export default function OrdersPage() {
       if (id === orders[i].id) {
         const order_item = orders[i].order_item;
         if (order_item) {
-          // console.log(order_item);
           let subTotal = 0;
           for (let j = 0; j < order_item.length; j++) {
-            console.log(order_item[j]);
             subTotal = subTotal + order_item[j].total_price;
           }
 

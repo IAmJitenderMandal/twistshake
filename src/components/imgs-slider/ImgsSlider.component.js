@@ -94,7 +94,6 @@ export default function ImagesSlider() {
     });
   };
 
-  console.log(images, "images arr");
   return (
     images.length && (
       <div className="images-slider">
@@ -109,7 +108,6 @@ export default function ImagesSlider() {
                   <div className="item" key={index}>
                     <img
                       onClick={(e) => {
-                        console.log(e.target.id);
                         setSku(imgObj.sku_id);
                         fetchSliderImages(imgObj.id);
                         setColorName(imgObj.color_name);
@@ -129,38 +127,4 @@ export default function ImagesSlider() {
       </div>
     )
   );
-}
-
-{
-  /* <OwlCarousel
-              className="owl-theme"
-              mouseDrag={false}
-              margin={5}
-              items={4}
-              nav={true}
-              // autoWidth={false}
-              navText={["<span><</span>", "<span>></span>"]}
-              dots={false}
-              // navContainer=".custom-nav .owl-nav"
-            >
-              {images.map((imgObj, index) => {
-                return (
-                  <div className="item" key={index}>
-                    <img
-                      onClick={(e) => {
-                        console.log(e.target.id);
-                        setSku(imgObj.sku_id);
-                        fetchSliderImages(imgObj.id);
-                        setColorName(imgObj.color_name);
-                      }}
-                      height={100}
-                      width={100}
-                      src={imgObj.product_image}
-                      alt="product-img"
-                      id={imgObj.id}
-                    />
-                  </div>
-                );
-              })}
-            </OwlCarousel> */
 }

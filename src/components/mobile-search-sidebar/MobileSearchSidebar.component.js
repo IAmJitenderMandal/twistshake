@@ -37,7 +37,6 @@ export default function MobileSearchSidebar() {
       pname: search,
     };
     Axios.post(`${requests.searchProduct}`, data, config).then((response) => {
-      console.log(response);
       setProducts(response.data.products);
     });
   };

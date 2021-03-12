@@ -28,11 +28,9 @@ export default function ProfileImage({ profileImage }) {
     ).then((response) => {
       if (response.data.user !== null) {
         var userDetails = response.data.user;
-        console.log(userDetails);
+
         if (userDetails.profile_pic) {
-          setImage(
-            `http://twistshake.ewtlive.in/admin/${userDetails.profile_pic}`
-          );
+          setImage(`http://twistshake.live/admin/${userDetails.profile_pic}`);
         }
       }
     });

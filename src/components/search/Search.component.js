@@ -34,7 +34,6 @@ export default function Search() {
     }
 
     Axios.post(`${requests.searchProduct}`, data, config).then((response) => {
-      console.log(response);
       setProducts(response.data.products);
     });
   };

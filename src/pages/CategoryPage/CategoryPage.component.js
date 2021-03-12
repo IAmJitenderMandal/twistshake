@@ -71,7 +71,7 @@ export default function CategoryPage() {
 
   async function fetchCategoryData(id) {
     const categoriesResponse = await axios.get(
-      `http://twistshake.ewtlive.in/admin/api/product-category`
+      `http://twistshake.live/admin/api/product-category`
     );
 
     categoriesResponse.data.menu.forEach((eachObj) => {
@@ -90,9 +90,9 @@ export default function CategoryPage() {
     // getting category bg
     categoryBG = navLinks.filter((eachObj) => eachObj.urlString === category);
     categoryBG = categoryBG[0].categoryBG;
-    console.log(categoryID, "data geting");
+
     const categoryData = await axios.get(
-      `http://twistshake.ewtlive.in/admin/api/show-product-by-category/${categoryID}/8`
+      `http://twistshake.live/admin/api/show-product-by-category/${categoryID}/8`
     );
 
     setCategoryProducts({
@@ -120,12 +120,6 @@ export default function CategoryPage() {
       return false;
     }
 
-    // if (!localStorage.getItem("ts-token")) {
-    //   history.push(`/login/${productDetails.id}`);
-
-    //   return false;
-    // }
-
     let data = {
       cart_item: {
         user_id: localStorage.getItem("ts-userid"),
@@ -142,15 +136,6 @@ export default function CategoryPage() {
         getCart();
       });
     } else {
-      console.log(productDetails);
-      // var product_color_image = product.product_color_image[0];
-      // for (let i = 0; i < product_color_image.length; i++) {
-      //   console.log(data.cart_item.sku_id, product_color_image[i].sku_id);
-      //   if (data.cart_item.sku_id == product_color_image[i].sku_id) {
-      //     data.cart_item.product_image = product_color_image[i].product_image;
-      //   }
-      // }
-
       if (!data.cart_item.product_image) {
         data.cart_item.product_image = productDetails.product_thumbnail[0];
       }
@@ -218,7 +203,6 @@ export default function CategoryPage() {
           heroBgTitle={categoryProducts.categoryContent.categoryTitle}
         />
       ) : null}
-      {console.log(categoryProducts)}
 
       <HeighlightBar />
       <div className="content">
@@ -247,6 +231,7 @@ export default function CategoryPage() {
                                   key < 3 ? (
                                     color.color_code === "" ? (
                                       <img
+                                        key={key}
                                         src={color.color_image}
                                         className="color"
                                       />

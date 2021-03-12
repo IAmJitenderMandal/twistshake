@@ -36,11 +36,8 @@ function SelectedProductCustomisation({
           eachItem.productID === coustomizeProductID.productID
         ) {
           flag = true;
-          console.log(customizeProduct[saveIndex]);
 
           customizeProduct.map((productAttr, attrIndex) => {
-            console.log(productAttr);
-            debugger;
             if (eachItem.attributeName === productAttr.attribute_value[0]) {
               setSelectedItem(customizeProduct[attrIndex]);
               setSelectedProductId(attrIndex);
@@ -136,7 +133,6 @@ function SelectedProductCustomisation({
   }, [selectedProductId]);
 
   const onClickProduct = (e) => {
-    console.log(customizeProduct);
     let tempProduct = customizeProduct[e.target.id];
     let flag = false;
     customizeProduct[e.target.id].product_color_image.map(
@@ -152,7 +148,6 @@ function SelectedProductCustomisation({
     }
     setSelectedItem(tempProduct);
     setSelectedProductId(e.target.id);
-    console.log(selectedItem);
   };
 
   const onChnageProduct = (eachColorObj, index) => {

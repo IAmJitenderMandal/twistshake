@@ -109,8 +109,6 @@ export default function Login() {
                   Authorization: `Bearer ${res.data.token}`,
                 },
               }).then((response) => {
-                console.log(response);
-                console.log(counter, cart.length);
                 if (counter === cart.length) {
                   window.location.reload();
                 }
@@ -122,7 +120,6 @@ export default function Login() {
         // window.location.reload();
       })
       .catch((err) => {
-        console.log(err.response);
         toast("Email and password incorrect!", {
           type: toast.TYPE.ERROR,
           autoClose: 10000,

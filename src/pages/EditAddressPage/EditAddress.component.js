@@ -82,9 +82,7 @@ export default function EditAddress() {
         getAddress();
         setEditAddress(false);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 
   const onEditAddress = () => {

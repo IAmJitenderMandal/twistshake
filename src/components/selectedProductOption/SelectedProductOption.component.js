@@ -12,7 +12,6 @@ export default function SelectedProductCustomisation() {
   useEffect(() => {}, [productState]);
   const [selectedItem, setSelectedItem] = useState({});
 
-  console.log(productState);
   return (
     <div
       className={`selected-customisation ${productState.CustomisationNestedSidebar}`}
@@ -61,9 +60,7 @@ export default function SelectedProductCustomisation() {
                               width={40}
                               alt="imgcolor"
                               sku_id={eachColorObj.sku_id}
-                              onClick={function () {
-                                console.log(this);
-                              }}
+                              onClick={function () {}}
                             />
                           )}
 
@@ -74,9 +71,7 @@ export default function SelectedProductCustomisation() {
                                 backgroundColor: eachColorObj.color_code,
                               }}
                               sku_id={eachColorObj.sku_id}
-                              onClick={function () {
-                                console.log(this);
-                              }}
+                              onClick={function () {}}
                             ></div>
                           )}
                         </div>
@@ -128,39 +123,3 @@ export default function SelectedProductCustomisation() {
     </div>
   );
 }
-
-{
-  /* <CustomProductCard img="https://products.twistshake.com/images/83_463c87a5ce-78149-1-original.jpg?q=70&fit=clip&w=300&h=375&fm=png&auto=format">
-            {" "}
-            <span>product name</span>
-          </CustomProductCard>
-          <CustomProductCard img="https://products.twistshake.com/images/83_463c87a5ce-78149-1-original.jpg?q=70&fit=clip&w=300&h=375&fm=png&auto=format">
-            {" "}
-            <span>product name</span>
-          </CustomProductCard> */
-}
-{
-  /* 
-productState.currentlySelectedInCustomisation.product_attribute.map(
-            (eachAttr) => (
-              <CustomProductCard img={eachAttr.attribute_Image}>
-                {/* {console.log(each)} */
-}
-{
-  /* <span>
-                  {eachAttr.attribute_value.map((eachValue) => {
-                    console.log(eachValue);
-                    return eachValue;
-                  })}
-                </span>
-              </CustomProductCard>
-            )
-          ) */
-}
-
-// <div className="each-color" key={index}>
-//                     <div className="inner-container">
-//                       <img src={eachColorObj.color} alt="imgcolor" />{" "}
-//                     </div>
-//                     <div className="color-name">{eachColorObj.color_name}</div>
-//                   </div>

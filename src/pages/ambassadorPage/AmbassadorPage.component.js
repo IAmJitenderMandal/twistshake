@@ -20,7 +20,6 @@ export default function Ambassador() {
   const [yourMsg, setYourMsg] = useState("");
 
   const [data, setData] = useState([]);
-  console.log(data);
 
   useEffect(() => {
     Axios.get(requests.pages).then((res) => {

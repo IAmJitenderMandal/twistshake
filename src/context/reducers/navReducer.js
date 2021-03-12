@@ -14,7 +14,7 @@ export const navReducer = (state, action) => {
       document.body.style.overflow = "auto";
     }
   }
-  console.log(state, action);
+
   if (action.type == "SET_MOBILE_MENU") {
     if (action.payload == "active") {
       document.body.style.overflow = "hidden";

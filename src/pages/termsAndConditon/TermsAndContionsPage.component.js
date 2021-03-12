@@ -16,7 +16,6 @@ export default function TermsAndConditons() {
   useEffect(() => {
     Axios.get(requests.pages).then((res) => {
       setData(res.data.pages["terms-and-conditions"]);
-      console.log(res.data.pages);
     });
   }, []);
 

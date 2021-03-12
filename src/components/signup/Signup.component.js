@@ -42,12 +42,10 @@ export default function Signup() {
   const handleChange = (e) => {
     if (e.target.id.toLowerCase() === "name") {
       var text = e.target.value.replace(/[^a-z ]/gi, "");
-      console.log(text);
       setName(text);
       setNameErr("");
     }
     if (e.target.id.toLowerCase() === "user_email") {
-      console.log(e.target.value);
       setEmail(e.target.value);
       setEmailErr("");
     }
@@ -81,7 +79,6 @@ export default function Signup() {
 
     // validating name field
     if (!name) {
-      console.log("invalid");
       nameErr = "Name can not be blank";
       setNameErr(nameErr);
       return false;
@@ -90,7 +87,6 @@ export default function Signup() {
     // validating email field
     if (email) {
       if (!validateEmail(email)) {
-        console.log("invalid");
         emailErr = "Invalid email";
         setEmailErr(emailErr);
         return false;
@@ -101,7 +97,6 @@ export default function Signup() {
     }
 
     if (phone.length < 9) {
-      console.log("phoneerr");
       setPhoneErr("Please enter correct phone");
       return false;
     }
@@ -154,7 +149,6 @@ export default function Signup() {
           }
         })
         .catch((res) => {
-          console.log(res.response.data.error);
           toast(res.response.data.error, {
             type: toast.TYPE.ERROR,
             autoClose: 10000,
