@@ -132,16 +132,16 @@ function App() {
 
   function fetchData() {
     const fetchBestSeller =
-      "http://twistshake.live/admin/api/best-seller-products/4";
+      "https://twistshake.live/admin/api/best-seller-products/4";
     const fetchCat1 =
-      "http://twistshake.live/admin/api/show-product-by-category/1/2";
+      "https://twistshake.live/admin/api/show-product-by-category/1/2";
     const fetchCat2 =
-      "http://twistshake.live/admin/api/show-product-by-category/2/2";
+      "https://twistshake.live/admin/api/show-product-by-category/2/2";
     const fetchCat3 =
-      "http://twistshake.live/admin/api/show-product-by-category/14/2";
+      "https://twistshake.live/admin/api/show-product-by-category/14/2";
     const fetchCat4 =
-      "http://twistshake.live/admin/api/show-product-by-category/22/2";
-    const fetchNavLinks = "http://twistshake.live/admin/api/product-category";
+      "https://twistshake.live/admin/api/show-product-by-category/22/2";
+    const fetchNavLinks = "https://twistshake.live/admin/api/product-category";
 
     const getBestSeller = axios.get(fetchBestSeller);
     const getCat1 = axios.get(fetchCat1);
@@ -345,7 +345,7 @@ function App() {
                           <div className="left-card">
                             <CategoryHeader
                               backgroundImage={
-                                "http://twistshake.live/admin/product_thumbnail/78279_1.png"
+                                "https://twistshake.live/admin/product_thumbnail/78279_1.png"
                               }
                               title={"OUR BEST BABY BOTTLES"}
                               subtitle={"TWISTSHAKE BOTTLES"}
