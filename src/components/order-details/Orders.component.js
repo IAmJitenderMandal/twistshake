@@ -77,8 +77,17 @@ export default function OrdersPage() {
                     </td>
                   </tr>
                 ))
-              : ""}
+              : null}
           </tbody>
+
+          {console.log(orders && orders.length < 0)}
+
+          {orders === [] ? (
+            <div className="emptry-order-area">
+              <h5>sorry you dont have any order</h5>
+              <Link to="/">Go back to Shoping</Link>
+            </div>
+          ) : null}
         </table>
       </div>
     </div>

@@ -30,7 +30,7 @@ export default function ProfileImage({ profileImage }) {
         var userDetails = response.data.user;
 
         if (userDetails.profile_pic) {
-          setImage(`https://twistshake.live/admin/${userDetails.profile_pic}`);
+          setImage(`https://twistshake.ae/admin/${userDetails.profile_pic}`);
         }
       }
     });

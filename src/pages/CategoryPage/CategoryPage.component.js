@@ -71,7 +71,7 @@ export default function CategoryPage() {
 
   async function fetchCategoryData(id) {
     const categoriesResponse = await axios.get(
-      `https://twistshake.live/admin/api/product-category`
+      `https://twistshake.ae/admin/api/product-category`
     );
 
     categoriesResponse.data.menu.forEach((eachObj) => {
@@ -92,7 +92,7 @@ export default function CategoryPage() {
     categoryBG = categoryBG[0].categoryBG;
 
     const categoryData = await axios.get(
-      `https://twistshake.live/admin/api/show-product-by-category/${categoryID}/8`
+      `https://twistshake.ae/admin/api/show-product-by-category/${categoryID}/8`
     );
 
     setCategoryProducts({
