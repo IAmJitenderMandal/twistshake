@@ -141,12 +141,6 @@ export default function Product(props) {
       return false;
     }
 
-    // if (!localStorage.getItem("ts-token")) {
-    //   history.push(`/login/${product.id}`);
-
-    //   return false;
-    // }
-
     let data = {
       cart_item: {
         user_id: localStorage.getItem("ts-userid"),

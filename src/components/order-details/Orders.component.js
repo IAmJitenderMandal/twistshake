@@ -39,7 +39,14 @@ export default function OrdersPage() {
       }
     }
   };
-
+  if (orders && orders.length < 1) {
+    return (
+      <div className="orders" id="dashboard">
+        <div className="section-title">Recent Orders</div>
+        <div className="loader"></div>
+      </div>
+    );
+  }
   return (
     <div className="orders" id="dashboard">
       <div className="section-title">Recent Orders</div>
@@ -55,39 +62,40 @@ export default function OrdersPage() {
             </tr>
           </thead>
           <tbody>
-            {orders
-              ? orders.map((order) => (
-                  <tr>
-                    <td>
+            {orders && orders.length > 0 ? (
+              orders.map((order, key) => (
+                <tr key={key}>
+                  {console.log("insider")}
+                  <td>
+                    <Link to={`/myaccount/order-details/${order.id}`}>
+                      #{order.id}
+                    </Link>
+                  </td>
+                  <td>{order.order_date}</td>
+                  <td>
+                    <span className="span">{order ? order.status : ""}</span>
+                  </td>
+                  <td>{order ? calculateGrandTotal(order.id) : ""} AEB</td>
+                  <td>
+                    <Button>
                       <Link to={`/myaccount/order-details/${order.id}`}>
-                        #{order.id}
+                        View
                       </Link>
-                    </td>
-                    <td>{order.order_date}</td>
-                    <td>
-                      <span className="span">{order ? order.status : ""}</span>
-                    </td>
-                    <td>{order ? calculateGrandTotal(order.id) : ""} AEB</td>
-                    <td>
-                      <Button>
-                        <Link to={`/myaccount/order-details/${order.id}`}>
-                          Views
-                        </Link>
-                      </Button>
-                    </td>
-                  </tr>
-                ))
-              : null}
+                    </Button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <div className="empty-order-area">
+                <h5 className="title-text">
+                  Sorry you dont have any recent orders
+                </h5>
+                <Link to="/">
+                  <button className="btn"> back to Shoping</button>
+                </Link>
+              </div>
+            )}
           </tbody>
-
-          {console.log(orders && orders.length < 0)}
-
-          {orders === [] ? (
-            <div className="emptry-order-area">
-              <h5>sorry you dont have any order</h5>
-              <Link to="/">Go back to Shoping</Link>
-            </div>
-          ) : null}
         </table>
       </div>
     </div>

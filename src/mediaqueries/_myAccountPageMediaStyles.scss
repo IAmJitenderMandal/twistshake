@@ -1,119 +1,135 @@
 @media only screen and (max-width: 1000px) {
-    .App {
-        .my-account {
-            .content {
-                display: flex;
-                flex-direction: column;
+  .App {
+    .my-account {
+      .content {
+        display: flex;
+        flex-direction: column;
 
-                .left {
-                    margin-bottom: 3rem;
-                }
-
-                .right {
-                    padding-left: 0rem;
-
-                    .account-description {
-                        font-size: 1rem;
-                    }
-
-                    .orders {
-                        margin-top: 1rem;
-                    }
-
-                    .editAccount {
-                        .form-element-group {
-                            width: 100%;
-
-                            input {
-                                border: 1px solid rgb(158, 158, 158);
-                            }
-                        }
-                    }
-
-
-                    .edit-address {
-                        width: 100%;
-
-                        form {
-
-                            input,
-                            select {
-                                border: 1px solid rgb(158, 158, 158);
-                                background-color: #fff;
-                            }
-
-                            input[type=submit] {
-                                background-color: #202020;
-                                padding: 1rem;
-                                font-size: 1rem;
-                            }
-                        }
-                    }
-
-                    .userInfo {
-                        width: 100%;
-                        margin-left: 0;
-
-
-                        .common {
-                            font-size: 1rem;
-                        }
-                    }
-                }
-            }
+        .left {
+          margin-bottom: 3rem;
         }
+
+        .right {
+          padding-left: 0rem;
+
+          .account-description {
+            font-size: 1rem;
+          }
+
+          .orders {
+            margin-top: 1rem;
+            position: relative;
+            min-height: 12rem;
+
+            .empty-order-area {
+              top: 10rem !important;
+            }
+          }
+
+          .editAccount {
+            .form-element-group {
+              width: 100%;
+
+              input {
+                border: 1px solid rgb(158, 158, 158);
+              }
+            }
+          }
+
+          .edit-address {
+            width: 100%;
+
+            form {
+              input,
+              select {
+                border: 1px solid rgb(158, 158, 158);
+                background-color: #fff;
+              }
+
+              input[type="submit"] {
+                background-color: #202020;
+                padding: 1rem;
+                font-size: 1rem;
+              }
+            }
+          }
+
+          .userInfo {
+            width: 100%;
+            margin-left: 0;
+
+            .common {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 620px) {
-    .App {
-        .my-account {
-            .content {
-                .right {
-                    padding-left: 0rem;
+  .App {
+    .my-account {
+      .content {
+        .right {
+          padding-left: 0rem;
 
-                    form {
-                        .inline-elements-container {
-                            flex-direction: column;
+          form {
+            .inline-elements-container {
+              flex-direction: column;
 
-                            .form-element-group:last-child {
-                                margin-left: 0;
-                            }
-                        }
-
-                        .drop-downs {
-                            margin-bottom: 0;
-                            display: flex;
-                            flex-direction: column;
-
-                            select {
-                                margin-bottom: 1.5rem;
-                            }
-                        }
-                    }
-                }
+              .form-element-group:last-child {
+                margin-left: 0;
+              }
             }
+
+            .drop-downs {
+              margin-bottom: 0;
+              display: flex;
+              flex-direction: column;
+
+              select {
+                margin-bottom: 1.5rem;
+              }
+            }
+          }
         }
+      }
     }
+  }
 }
 
-
 @media only screen and (max-width: 572px) {
-    .App {
-        .my-account {
-            .content {
-                .right {
-                    padding-left: 0rem;
+  .App {
+    .my-account {
+      .content {
+        .right {
+          padding-left: 0rem;
 
-                    .data-table {
-                        overflow-x: scroll;
+          .data-table {
+            overflow-x: scroll;
 
-                        table {
-                            width: 500px;
-                        }
-                    }
-                }
+            table {
+              width: 500px;
             }
+          }
+
+          .orders {
+            .empty-order-area {
+              padding-top: 1rem;
+              .title-text {
+                font-size: 1rem;
+              }
+              .btn {
+                font-size: 0.8rem;
+                padding-left: 0.4rem;
+                padding-right: 0.4rem;
+              }
+            }
+          }
         }
+      }
     }
+  }
 }

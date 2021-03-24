@@ -57,6 +57,7 @@ export default function OrderDetail(props) {
     let order_item = orderDetails.order_item;
     if (order_item) {
       let subTotal = 0;
+
       for (let i = 0; i < order_item.length; i++) {
         subTotal = subTotal + order_item[i].total_price;
       }

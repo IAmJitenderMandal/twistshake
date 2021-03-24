@@ -95,7 +95,6 @@ function SelectedProductCustomisation({
         });
       }
     } else {
-      debugger;
       setSaveProduct({
         ...saveProduct,
         index: coustomizeProductID.productIndex,
@@ -171,13 +170,11 @@ function SelectedProductCustomisation({
   };
   const handleClickOk = () => {
     if (clickOnColor) {
-      debugger;
       handleOk(saveProduct);
     } else {
       let newSaveItem;
       let changedisplayData;
       selectedItem.product_color_image.map((eachColorObj, index) => {
-        debugger;
         if (eachColorObj.product_image === selectedItem.attribute_Image) {
           newSaveItem = {
             ...saveProduct,
@@ -198,7 +195,6 @@ function SelectedProductCustomisation({
         }
       });
       if (newSaveItem && changedisplayData) {
-        debugger;
         handleOk(newSaveItem);
       }
     }
