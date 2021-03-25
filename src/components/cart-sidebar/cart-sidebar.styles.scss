@@ -23,6 +23,7 @@
   }
 
   .inner-wrapper {
+    position: relative;
     .header-top {
       padding: 1.2rem 1.5rem;
       display: flex;
@@ -142,5 +143,24 @@
     cursor: pointer;
     transition: all 0.1s ease-in;
     text-transform: uppercase;
+  }
+
+  .empty-cart {
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .title-text {
+      font-size: 1.2rem;
+      color: #202020;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background-color: #202020;
+      color: #d4d4d4;
+    }
   }
 }

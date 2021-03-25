@@ -1,19 +1,9 @@
 import React, { useState } from "react";
 import "./cart-product.styles.scss";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
-import { VscChevronDown } from "react-icons/vsc";
-import { IoMdCloseCircle } from "react-icons/io";
 import Counter from "../counter/Counter.component";
 import { Link } from "react-router-dom";
-import Axios from "../../axios/axios";
-import requests from "../../axios/requests";
 import { useHistory } from "react-router-dom";
-
-const config = {
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem("ts-token")}`,
-  },
-};
 
 export default function CartProduct({
   data,
@@ -24,8 +14,7 @@ export default function CartProduct({
   updateQuantity,
   removeCart,
 }) {
-  const [packageBox, setPackageBox] = useState("");
-  const [productQuantity, setProductQuantity] = useState(quantity);
+  const [productQuantity] = useState(quantity);
   const [showPakageContent, setShowPakageContent] = useState(false);
   const history = useHistory();
 

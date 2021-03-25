@@ -200,7 +200,7 @@ export default function Footer() {
                               to="/customer-service/contact"
                               className="link"
                             >
-                              Distributors
+                              Retailer
                             </Link>
                           </li>
                         </ul>
@@ -246,17 +246,10 @@ export default function Footer() {
                         About Us
                       </Link>
                     </li>
-                    {/* <li>
-                      <Link
-                        to="/customer-service/twistshake-world"
-                        className="link"
-                      >
-                        Twistshake world
-                      </Link>
-                    </li> */}
+
                     <li>
                       <Link to="/customer-service/contact" className="link">
-                        Distributors
+                        Retailer
                       </Link>
                     </li>
                   </ul>

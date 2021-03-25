@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./myAccountPage.styles.scss";
 import ProfileImage from "../../components/profileImage/ProfileImage.component";
-import Button from "../../components/button/Button.component";
 import Orders from "../../components/order-details/Orders.component";
 import EditAccountForm from "../EditAccountForm/EditAccountForm.component";
 import EditAddress from "../EditAddressPage/EditAddress.component";
@@ -30,11 +29,6 @@ export default function MyAccounPage() {
             <span className="profile-name">
               {localStorage.getItem("ts-name")}
             </span>
-            {/* <div className="button-logout">
-              <Button>
-                <span onClick={logout}>LOGOUT</span>
-              </Button>
-            </div> */}
           </div>
 
           <div className="bottom-content">

@@ -9,10 +9,8 @@ import FormInput from "../../components/formInput/FormInput.component";
 import SelectOption from "../../components/selectOption/SelectOption.component";
 import { IoMdCloseCircle } from "react-icons/io";
 
-import { Link } from "react-router-dom";
-
 import { BiMoney } from "react-icons/bi";
-import { FaDhl, FaFedex } from "react-icons/fa";
+
 // toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -42,8 +40,6 @@ function CheckOutPage() {
       type: toast.TYPE.INFO,
       autoClose: 10000,
     });
-
-  const localStorageCart = JSON.parse(localStorage.getItem("ts-cart"));
 
   useEffect(() => {
     document.title = `Checkout • For babies and toddlers • Twistshake`;
@@ -153,17 +149,14 @@ function CheckOutPage() {
     if (localStorage.getItem("ts-token")) {
       Axios.delete(`${requests.getCart}/${id}`, config).then((response) => {
         getCart();
-
-        if (response.status === 200) {
-          toast.dark("Product Removed from cart");
-        }
+        toast.dark("Product removed from cart");
       });
     } else {
       var cart = JSON.parse(localStorage.getItem("ts-cart"));
       cart.splice(id - 1, 1);
       cart = JSON.stringify(cart);
       localStorage.setItem("ts-cart", cart);
-      toast.dark("Product Removed from cart");
+      toast.dark("Product removed from cart");
       window.location.reload();
     }
   };
@@ -352,50 +345,40 @@ function CheckOutPage() {
             </b>
           </div>
           {localStorage.getItem("ts-token") ? (
-            cartState.cartProduct && cartState.cartProduct.length > 0 ? (
-              cartState.cartProduct.map((product, index) => {
-                return (
-                  <div className="cart-product">
-                    <div className="inner-container">
-                      {console.log("data comming")}
-                      <div className="top">
-                        <span
-                          className="icon-close"
-                          onClick={removeCart.bind(this, product.cart_id)}
-                        >
-                          <IoMdCloseCircle />
-                        </span>
-                      </div>
-                      <CartProduct
-                        removeProduct={removeProduct}
-                        removeCart={removeCart}
-                        cartIndex={product.cart_id}
-                        key={index}
-                        data={product}
-                        pakageContent={product.productDetails}
-                        quantity={product.quantity}
-                        updateQuantity={updateQuantity}
-                      />
+            cartState.cartProduct &&
+            cartState.cartProduct.length > 0 &&
+            cartState.cartProduct.map((product, index) => {
+              return (
+                <div className="cart-product">
+                  <div className="inner-container">
+                    <div className="top">
+                      <span
+                        className="icon-close"
+                        onClick={removeCart.bind(this, product.cart_id)}
+                      >
+                        <IoMdCloseCircle />
+                      </span>
                     </div>
+                    <CartProduct
+                      removeProduct={removeProduct}
+                      removeCart={removeCart}
+                      cartIndex={product.cart_id}
+                      key={index}
+                      data={product}
+                      pakageContent={product.productDetails}
+                      quantity={product.quantity}
+                      updateQuantity={updateQuantity}
+                    />
                   </div>
-                );
-              })
-            ) : (
-              <div className="empty-cart">
-                <h5 className="title-text">Your cart is empty</h5>
-                <Link to="/">
-                  <button className="btn"> back to Shoping</button>
-                </Link>
-              </div>
-            )
-          ) : (
-            localStorage.getItem("ts-cart").length > 0 &&
+                </div>
+              );
+            })
+          ) : localStorage.getItem("ts-cart") ? (
             JSON.parse(localStorage.getItem("ts-cart")).map(
               (product, index) => {
                 return (
                   <div key={index} className="cart-product">
                     <div className="inner-container">
-                      {console.log("entering")}
                       <div className="top">
                         <span
                           className="icon-close"
@@ -419,17 +402,9 @@ function CheckOutPage() {
                 );
               }
             )
+          ) : (
+            <div className="empty-message">Your cart is empty!</div>
           )}
-
-          {localStorageCart.length < 1 &&
-          localStorage.getItem("ts-token") === null ? (
-            <div className="empty-cart">
-              <h5 className="title-text">Your cart is empty</h5>
-              <Link to="/">
-                <button className="btn"> back to Shoping </button>
-              </Link>
-            </div>
-          ) : null}
         </div>
 
         <div className="float-child-payment">
@@ -487,9 +462,8 @@ function CheckOutPage() {
                       </option>
                       {cities &&
                         cities.length > 0 &&
-                        cities.map((city, key) => (
+                        cities.map((city) => (
                           <option
-                            key={key}
                             value={`${city.shipping_charge}-${city.shipping_state}`}
                           >
                             {city.shipping_state}

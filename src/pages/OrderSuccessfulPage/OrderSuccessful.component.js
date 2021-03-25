@@ -1,4 +1,4 @@
-import React, { useReducer, useContext, useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import "./OrderSuccessful.styles.scss";

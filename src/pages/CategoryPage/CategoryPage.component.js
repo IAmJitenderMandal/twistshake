@@ -92,7 +92,7 @@ export default function CategoryPage() {
     categoryBG = categoryBG[0].categoryBG;
 
     const categoryData = await axios.get(
-      `https://twistshake.ae/admin/api/show-product-by-category/${categoryID}/8`
+      `https://twistshake.ae/admin/api/show-product-by-category/${categoryID}/20`
     );
 
     setCategoryProducts({
