@@ -21,16 +21,10 @@ import {
   SET_CAT_TWO_DATA,
   SET_CAT_THREE_DATA,
   SET_CAT_FOUR_DATA,
-  DISABLE_MOBILE_MENU,
   SET_LINKS,
 } from "./context/action.types";
 
-import {
-  HomeContext,
-  NavContext,
-  ProductContext,
-  AppContext,
-} from "./context/Context";
+import { HomeContext, NavContext, AppContext } from "./context/Context";
 import { navReducer } from "./context/reducers/navReducer";
 import { homeReducer } from "./context/reducers/homeReducer";
 import { appReducer } from "./context/reducers/appReducer";
@@ -39,7 +33,6 @@ import { cartReducer } from "./context/reducers/cartReducer";
 import { BrowserRouter, Switch, Link, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar.component";
-import VideoBackground from "./components/videoBackground/VideoBackground.component";
 import Header from "./components/header/Header.component";
 import HeighlightBar from "./components/heighlight-bar/HeighlightBar.component";
 import Row from "./components/row/Row.component";
@@ -69,9 +62,6 @@ import OrderSuccessful from "./pages/OrderSuccessfulPage/OrderSuccessful.compone
 import OrderDetail from "./pages/OrderDetailPage/OrderDetail.component";
 
 function App() {
-  const { width } = useViewPort();
-  const [heroBgData, setHeroBgData] = useState([]);
-
   const [appState, appStateDispatch] = useReducer(appReducer, {
     cartProductsToSendInDB: [],
     produtToShowInCart: [],
