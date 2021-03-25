@@ -75,7 +75,7 @@ export default function OrdersPage() {
                   <td>
                     <span className="span">{order ? order.status : ""}</span>
                   </td>
-                  <td>{order ? calculateGrandTotal(order.id) : ""} AEB</td>
+                  <td>{order ? calculateGrandTotal(order.id) : ""} AED</td>
                   <td>
                     <Button>
                       <Link to={`/myaccount/order-details/${order.id}`}>

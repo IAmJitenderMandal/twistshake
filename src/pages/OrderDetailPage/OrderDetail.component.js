@@ -119,25 +119,25 @@ export default function OrderDetail(props) {
           <p className="amount">
             {" "}
             Sub Total :{" "}
-            <span>{orderDetails ? calculateSubtotal() : ""} AEB</span>
+            <span>{orderDetails ? calculateSubtotal() : ""} AED</span>
           </p>
           <p className="amount">
             {" "}
             Discount Amount :{" "}
             <span>
-              {orderDetails ? `- ${calculateTotalSaving()}` : ""} AEB{" "}
+              {orderDetails ? `- ${calculateTotalSaving()}` : ""} AED{" "}
             </span>
           </p>
           <p className="amount">
             {" "}
             Shipping Charges :{" "}
-            <span>{orderDetails ? orderDetails.shipping_charge : ""} AEB </span>
+            <span>{orderDetails ? orderDetails.shipping_charge : ""} AED </span>
           </p>
           <p className="amount grand-total">
             {" "}
             <b> Grand Total : </b>
             <span>
-              <b> {orderDetails ? calculateGrandTotal() : ""} AEB</b>{" "}
+              <b> {orderDetails ? calculateGrandTotal() : ""} AED</b>{" "}
             </span>
           </p>
         </div>
@@ -162,7 +162,7 @@ export default function OrderDetail(props) {
                     <p>Quantity : {data ? data.quantity : ""}</p>
                   </div>
                   <div className="price-wrapper">
-                    {data ? data.total_price : ""} AEB
+                    {data ? data.total_price : ""} AED
                   </div>
                 </div>
               ))
