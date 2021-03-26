@@ -37,38 +37,6 @@ export default function FooterIcons() {
           </span>
         </Link>
       </div>
-      <div className="icons-right">
-        <Link to="/" className="link">
-          {" "}
-          <span className="klarna">
-            <RiPaypalFill />
-          </span>
-        </Link>
-        <Link to="/" className="link">
-          {" "}
-          <span className="bankId">
-            <RiBankFill />
-          </span>
-        </Link>
-        <Link to="/" className="link">
-          {" "}
-          <span className="visa">
-            <SiVisa />
-          </span>
-        </Link>
-        <Link to="/" className="link">
-          {" "}
-          <span className="master-card">
-            <SiMastercard />
-          </span>
-        </Link>
-        <Link to="/" className="link">
-          {" "}
-          <span className="aerican-express">
-            <SiAmericanexpress />
-          </span>
-        </Link>
-      </div>
     </div>
   );
 }

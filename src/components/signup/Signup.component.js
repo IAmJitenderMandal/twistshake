@@ -230,7 +230,7 @@ export default function Signup() {
                 <div className="validationMsg">{confirmPasswordErr}</div>
                 <FormInput
                   type="submit"
-                  value="Signup"
+                  value="Sign up"
                   name="signupSubmit"
                   className="signup-btn"
                 />

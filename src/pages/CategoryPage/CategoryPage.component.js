@@ -206,7 +206,7 @@ export default function CategoryPage() {
 
       <HeighlightBar />
       <div className="content">
-        <div className="category-products">
+        <div className="category-products" id="category-products-area">
           <Row title="">
             {categoryProducts.products.length > 0
               ? categoryProducts.products.map((product, index) => (
