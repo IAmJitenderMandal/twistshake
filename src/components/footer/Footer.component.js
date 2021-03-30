@@ -3,6 +3,8 @@ import "./footer.styles.scss";
 import { BiSend } from "react-icons/bi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 import { Link } from "react-router-dom";
 import FooterIcons from "../footer-icons/FooterIcons.component";
 import Axios from "../../axios/axios";
@@ -137,27 +139,33 @@ export default function Footer() {
                     <AccordionItemPanel>
                       <div className="links">
                         <ul>
-                          <li>
-                            <Link
-                              to="/customer-service/about-us"
-                              className="link"
-                            >
-                              Contact us
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/customer-service/faq" className="link">
-                              FAQ
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              to="/customer-service/payment-delivery"
-                              className="link"
-                            >
-                              Payment deliveries
-                            </Link>
-                          </li>
+                          <AnchorLink href="#customerServicesNavLinks">
+                            <li>
+                              <Link
+                                to="/customer-service/about-us"
+                                className="link"
+                              >
+                                Contact us
+                              </Link>
+                            </li>
+                          </AnchorLink>
+                          <AnchorLink href="#customerServicesNavLinks">
+                            <li>
+                              <Link to="/customer-service/faq" className="link">
+                                FAQ
+                              </Link>
+                            </li>
+                          </AnchorLink>
+                          <AnchorLink href="#customerServicesNavLinks">
+                            <li>
+                              <Link
+                                to="/customer-service/terms-and-conditions"
+                                className="link"
+                              >
+                                Payment deliveries
+                              </Link>
+                            </li>
+                          </AnchorLink>
                         </ul>
                       </div>
                     </AccordionItemPanel>
@@ -179,30 +187,27 @@ export default function Footer() {
                     <AccordionItemPanel>
                       <div className="links">
                         <ul>
-                          <li>
-                            <Link
-                              to="/customer-service/about-us"
-                              className="link"
-                            >
-                              About Us
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              to="/customer-service/twistshake-world"
-                              className="link"
-                            >
-                              Twistshake world
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              to="/customer-service/contact"
-                              className="link"
-                            >
-                              Retailer
-                            </Link>
-                          </li>
+                          <AnchorLink href="#customerServicesNavLinks">
+                            <li>
+                              <Link
+                                to="/customer-service/about-us"
+                                className="link"
+                              >
+                                About Us
+                              </Link>
+                            </li>
+                          </AnchorLink>
+
+                          <AnchorLink href="#customerServicesNavLinks">
+                            <li>
+                              <Link
+                                to="/customer-service/contact"
+                                className="link"
+                              >
+                                Retailer
+                              </Link>
+                            </li>
+                          </AnchorLink>
                         </ul>
                       </div>
                     </AccordionItemPanel>
@@ -216,24 +221,30 @@ export default function Footer() {
                 <div className="heading-title">Customer service</div>
                 <div className="links">
                   <ul>
-                    <li>
-                      <Link to="/customer-service/contact" className="link">
-                        Contact us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/customer-service/faq" className="link">
-                        FAQ
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/customer-service/terms-and-conditions"
-                        className="link"
-                      >
-                        Payment deliveries
-                      </Link>
-                    </li>
+                    <AnchorLink href="#customerServicesNavLinks">
+                      <li>
+                        <Link to="/customer-service/contact" className="link">
+                          Contact us
+                        </Link>
+                      </li>
+                    </AnchorLink>
+                    <AnchorLink href="#customerServicesNavLinks">
+                      <li>
+                        <Link to="/customer-service/faq" className="link">
+                          FAQ
+                        </Link>
+                      </li>
+                    </AnchorLink>
+                    <AnchorLink href="#customerServicesNavLinks">
+                      <li>
+                        <Link
+                          to="/customer-service/terms-and-conditions"
+                          className="link"
+                        >
+                          Payment deliveries
+                        </Link>
+                      </li>
+                    </AnchorLink>
                   </ul>
                 </div>
               </div>
@@ -241,17 +252,20 @@ export default function Footer() {
                 <div className="heading-title">Twistshake</div>
                 <div className="links">
                   <ul>
-                    <li>
-                      <Link to="/customer-service/about-us" className="link">
-                        About Us
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link to="/customer-service/contact" className="link">
-                        Retailer
-                      </Link>
-                    </li>
+                    <AnchorLink href="#customerServicesNavLinks">
+                      <li>
+                        <Link to="/customer-service/about-us" className="link">
+                          About Us
+                        </Link>
+                      </li>
+                    </AnchorLink>
+                    <AnchorLink href="#customerServicesNavLinks">
+                      <li>
+                        <Link to="/customer-service/contact" className="link">
+                          Retailer
+                        </Link>
+                      </li>
+                    </AnchorLink>
                   </ul>
                 </div>
               </div>
@@ -261,15 +275,19 @@ export default function Footer() {
           <div className="bottom-content">
             <div className="extra-links">
               <div className="top">
-                <Link
-                  to="/customer-service/terms-and-conditions"
-                  className="link"
-                >
-                  Terms and conditions
-                </Link>
-                <Link to="/customer-service/privacy-policy" className="link">
-                  Privacy Policy
-                </Link>
+                <AnchorLink href="#customerServicesNavLinks" className="link">
+                  <Link
+                    to="/customer-service/terms-and-conditions"
+                    className="link"
+                  >
+                    Terms and conditions
+                  </Link>
+                </AnchorLink>
+                <AnchorLink href="#customerServicesNavLinks" className="link">
+                  <Link to="/customer-service/privacy-policy" className="link">
+                    Privacy Policy
+                  </Link>
+                </AnchorLink>
               </div>
             </div>
           </div>
