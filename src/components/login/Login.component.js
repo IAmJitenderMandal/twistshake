@@ -209,11 +209,11 @@ export default function Login() {
                   name="loginSubmit"
                   className="remember-login"
                 />
-                <label htmlFor="login-btn">Remember Login</label>
+                <label htmlFor="login-btn">Remember Log In</label>
               </div>
               <FormInput
                 type="submit"
-                value="Login"
+                value="Log In"
                 name="loginSubmit"
                 className="login-btn"
               />
