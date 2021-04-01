@@ -182,7 +182,7 @@ export default function Login() {
       <ToastContainer />
       <div className="inner-container">
         <div className="login-container">
-          <h2 className="login-title">Login</h2>
+          <h2 className="login-title">Log in</h2>
           <div className="form">
             <form onSubmit={handleSubmit}>
               <FormInput
@@ -209,11 +209,11 @@ export default function Login() {
                   name="loginSubmit"
                   className="remember-login"
                 />
-                <label htmlFor="login-btn">Remember Login</label>
+                <label htmlFor="login-btn">Remember Log In</label>
               </div>
               <FormInput
                 type="submit"
-                value="Login"
+                value="Log In"
                 name="loginSubmit"
                 className="login-btn"
               />

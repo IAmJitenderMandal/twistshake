@@ -121,7 +121,6 @@ export default function Navbar() {
             });
           }}
         >
-          {" "}
           {navState.searchSideBarMobile === "active" ? (
             <AiOutlineClose />
           ) : (
@@ -232,10 +231,22 @@ export default function Navbar() {
             </Link>
           ) : (
             <React.Fragment>
-              <Link to="/login" className="link login-link">
-                Login
+              <Link
+                to="/login"
+                className="link login-link"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Log In
               </Link>
-              <Link to="/create-account" className="link create-account-link">
+              <Link
+                to="/create-account"
+                className="link create-account-link"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
                 Create Account
               </Link>
             </React.Fragment>

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export default function CustomerServiceNavbar() {
   return (
-    <div className="customerNavbar">
+    <div className="customerNavbar" id="customerServicesNavLinks">
       <div className="nav-links">
         <NavLink
           className="link"

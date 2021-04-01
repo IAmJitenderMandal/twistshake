@@ -109,7 +109,7 @@ export default function MobileMenuSidebar() {
                     className="link login-link"
                     onClick={disableNav}
                   >
-                    Login
+                    Log In
                   </Link>
                 </li>
                 <li className="link">

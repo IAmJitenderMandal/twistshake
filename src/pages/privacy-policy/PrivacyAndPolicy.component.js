@@ -31,7 +31,7 @@ export default function PrivacyAndPolicy() {
           <ul className="list">
             {data.length > 0 &&
               data.map((eachset, index) => (
-                <AnchorLink offset="80" href={`#para${index}`}>
+                <AnchorLink key={index} offset="80" href={`#para${index}`}>
                   <li key={index}>{eachset.page_sub_title}</li>
                 </AnchorLink>
               ))}

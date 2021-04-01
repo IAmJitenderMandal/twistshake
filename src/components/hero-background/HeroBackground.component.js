@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory, matchPath } from "react-router-dom";
 import Button from "../button/Button.component";
 import "./hero-background.styles.scss";
+
+// AnchorLink from react link smooth scroll
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export default function HeroBackground({
   src,
@@ -16,6 +19,7 @@ export default function HeroBackground({
 }) {
   const [widthMobileDisable, setWidthMobile] = useState(window.innerWidth);
   const [mobileView, isMobileView] = useState(false);
+  const urlPathStr = useHistory().location.pathname;
 
   const mobileResize = () => {
     setWidthMobile(window.innerWidth);
@@ -63,14 +67,25 @@ export default function HeroBackground({
               {homeBgContent}
             </h1>
 
-            <Link to={videoBtnLink}>
-              <button
-                className="btn"
-                style={{ backgroundColor: btnColor, color: btnTextColor }}
-              >
-                <span>Buy Now</span>
-              </button>
-            </Link>
+            {!urlPathStr.includes("/pages/") ? (
+              <Link to={videoBtnLink}>
+                <button
+                  className="btn"
+                  style={{ backgroundColor: btnColor, color: btnTextColor }}
+                >
+                  <span>Buy Now</span>
+                </button>
+              </Link>
+            ) : (
+              <AnchorLink href="#category-products-area">
+                <button
+                  className="btn"
+                  style={{ backgroundColor: btnColor, color: btnTextColor }}
+                >
+                  <span>Buy Now</span>
+                </button>
+              </AnchorLink>
+            )}
           </div>
         </div>
       ) : (
@@ -90,14 +105,26 @@ export default function HeroBackground({
             <h1 className="heading" style={{ color: "#fff" }}>
               {homeBgContent}
             </h1>
-            <Link to={videoBtnLink}>
-              <button
-                className="btn"
-                style={{ backgroundColor: "#fff", color: "#000" }}
-              >
-                <span>Buy Now</span>
-              </button>
-            </Link>
+
+            {!urlPathStr.includes("/pages/") ? (
+              <Link to={videoBtnLink}>
+                <button
+                  className="btn"
+                  style={{ backgroundColor: btnColor, color: btnTextColor }}
+                >
+                  <span>Buy Now</span>
+                </button>
+              </Link>
+            ) : (
+              <AnchorLink href="#category-products-area">
+                <button
+                  className="btn"
+                  style={{ backgroundColor: btnColor, color: btnTextColor }}
+                >
+                  <span>Buy Now</span>
+                </button>
+              </AnchorLink>
+            )}
           </div>
         </div>
       )}

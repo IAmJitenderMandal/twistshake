@@ -28,7 +28,7 @@ export default function Signup() {
     document.title = `Sign Up • For babies and toddlers • Twistshake`;
   });
   const notifySucess = () =>
-    toast("Sucessfully Registered, use your Email Password to login", {
+    toast("Sucessfully Registered, use your Email Password to Log In", {
       type: toast.TYPE.INFO,
       autoClose: 10000,
     });
@@ -167,7 +167,7 @@ export default function Signup() {
               Your account has been successfully created
             </h3>
             <Link to="/login" className="link">
-              Click here to login
+              Click here to Log In
             </Link>
           </div>
         ) : (
@@ -230,7 +230,7 @@ export default function Signup() {
                 <div className="validationMsg">{confirmPasswordErr}</div>
                 <FormInput
                   type="submit"
-                  value="Signup"
+                  value="Sign up"
                   name="signupSubmit"
                   className="signup-btn"
                 />
