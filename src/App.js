@@ -393,7 +393,7 @@ function App() {
                           <div className="right-card">
                             <CategoryHeader
                               backgroundImage={
-                                "https://media.twistshake.com/2020/07/06082526/hmogminit.png?q=70&fit=clip&w=700&auto=format"
+                                "https://twistshake.ae/admin/product_thumbnail/babywithsipper33.png"
                               }
                               title={"SNACK ON THE GO"}
                               subtitle={"Squeeze Bags"}
@@ -415,7 +415,7 @@ function App() {
                           <div className="left-card dark-content">
                             <CategoryHeader
                               backgroundImage={
-                                "https://products.twistshake.com/images/48_08ac59df5e-pacifier1-original.jpg?q=70&fit=clip&w=400&fm=jpg&bg=FAFAFA&auto=format"
+                                "https://twistshake.ae/admin/product_thumbnail/white-baby12.jpg"
                               }
                               title={"OUR STYLISH PECIEFIERS AND TEETHERS"}
                               subtitle={"Twistshake PECIEFIERS"}
@@ -463,7 +463,7 @@ function App() {
                           <div className="right-card dark-content">
                             <CategoryHeader
                               backgroundImage={
-                                "https://media.twistshake.com/2020/10/01092314/Babybottle.jpg?q=70&fit=clip&w=700&auto=format"
+                                "https://twistshake.ae/admin/product_thumbnail/Babybottle.jpg"
                               }
                               title="OUR STYLISH Baby Bottles"
                               subtitle="Baby Bottles"
