@@ -245,188 +245,202 @@ export default function Product(props) {
 	const { displayProduct } = productState;
 
 	return (
-		<ProductContext.Provider
-			value={{
-				productState,
-				productStateDispatch,
-				cartState,
-				cartStateDispatch,
-			}}
-		>
-			{Object.keys(product).length !== 0 ? (
-				<div className="product">
-					<div className={`overlay ${productState.packageSidebar}`}></div>
-					<div className="container">
-						{/* customisation sidebar  */}
-						<div className="customisation-sidebar" ref={sidebarRef}>
-							<PackageCustomisation />
-						</div>
+    <ProductContext.Provider
+      value={{
+        productState,
+        productStateDispatch,
+        cartState,
+        cartStateDispatch,
+      }}
+    >
+      {Object.keys(product).length !== 0 ? (
+        <div className="product">
+          <div className={`overlay ${productState.packageSidebar}`}></div>
+          <div className="container">
+            {/* customisation sidebar  */}
+            <div className="customisation-sidebar" ref={sidebarRef}>
+              <PackageCustomisation />
+            </div>
 
-						<div className={`overlay`}></div>
-						{/* customisation sidebar ends  */}
+            <div className={`overlay`}></div>
+            {/* customisation sidebar ends  */}
 
-						<div className="top">
-							<div className="product-imgs-container">
-								<div className="images">
-									<Slider {...settings}>
-										{galleryitems.map((img, index) => (
-											<div className="eachslide" key={index}>
-												<img src={`${img}`} alt="img" />
-											</div>
-										))}
-									</Slider>
-								</div>
-								<div className="badges">
-									<RoundBadge>{product.discount}</RoundBadge>
-									{product.shipping === 'free' ? (
-										<RectangleBadge>Free Shipping</RectangleBadge>
-									) : null}
-								</div>
-							</div>
-							<div className="product-details-container">
-								<div className="product-title">
-									<div className="product-name">{product.product_name}</div>
-									<div className="stock">
-										{' '}
-										<span className="signal-success"></span> In stock
-									</div>
-								</div>
-								<div className="extra-customization">0 mth+/Mixed colors</div>
-								<div className="price">
-									<div className="previous">{product.price}</div>
-									<div className="latest">{product.total_price}</div>
-								</div>
-								<div className="product-description">{product.short_descript}</div>
-								<div className="imgslider">{product.type === 'single' ? <ImagesSlider /> : null}</div>
-								<div className="buttons">
-									{product.type === 'single' ? (
-										<Counter
-											updateQuantity={setQuantity}
-											quantity={quantity}
-											onAddQuantity={onAddQuantity}
-											onRemoveQuantity={onRemoveQuantity}
-										/>
-									) : null}
+            <div className="top">
+              <div className="product-imgs-container">
+                <div className="images">
+                  <Slider {...settings}>
+                    {galleryitems.map((img, index) => (
+                      <div className="eachslide" key={index}>
+                        <img src={`${img}`} alt="img" />
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
+                <div className="badges">
+                  <RoundBadge>{product.discount}</RoundBadge>
+                  {product.shipping === "free" ? (
+                    <RectangleBadge>Free Shipping</RectangleBadge>
+                  ) : null}
+                </div>
+              </div>
+              <div className="product-details-container">
+                <div className="product-title">
+                  <div className="product-name">{product.product_name}</div>
+                  <div className="stock">
+                    {" "}
+                    <span className="signal-success"></span> In stock
+                  </div>
+                </div>
+                <div className="extra-customization">0 mth+/Mixed colors</div>
+                <div className="price">
+                  <div className="previous">{product.price}</div>
+                  <div className="latest">{product.total_price}</div>
+                </div>
+                <div className="product-description">
+                  {product.short_descript}
+                </div>
+                <div className="imgslider">
+                  {product.type === "single" ? <ImagesSlider /> : null}
+                </div>
+                <div className="buttons">
+                  {product.type === "single" ? (
+                    <Counter
+                      updateQuantity={setQuantity}
+                      quantity={quantity}
+                      onAddQuantity={onAddQuantity}
+                      onRemoveQuantity={onRemoveQuantity}
+                    />
+                  ) : null}
 
-									{product.type !== 'single' ? (
-										<div
-											className="cutomize-btn"
-											onClick={() => {
-												productStateDispatch({
-													type: PACKAGE_SIDEBAR,
-													payload: 'active',
-												});
-											}}
-										>
-											<Button>Customize Package</Button>
-										</div>
-									) : isProductAdded ? (
-										<Link to="/checkout" className="cutomize-btn">
-											<Button>Added, Go To Cart</Button>
-										</Link>
-									) : loading ? (
-										<div className="cutomize-btn">
-											<Button>Loading...</Button>
-										</div>
-									) : (
-										<div className="cutomize-btn" onClick={addToCart}>
-											<Button>Add To Cart</Button>
-										</div>
-									)}
-								</div>
-								<div className="extra-details">
-									<div className="safe-payment">
-										<span className="icon">
-											<AiOutlineSafety />
-										</span>
-										<span className="text">Safe payment</span>
-									</div>
-									<div className="fast-delivery">
-										<span className="icon">
-											<FiTruck />
-										</span>
-										<span className="text">Fast deliveries around the world</span>
-									</div>
-								</div>
-							</div>
-						</div>
+                  {product.type !== "single" ? (
+                    <div
+                      className="cutomize-btn"
+                      onClick={() => {
+                        productStateDispatch({
+                          type: PACKAGE_SIDEBAR,
+                          payload: "active",
+                        });
+                      }}
+                    >
+                      <Button>Customize Package</Button>
+                    </div>
+                  ) : isProductAdded ? (
+                    <Link to="/checkout" className="cutomize-btn">
+                      <Button>Added, Go To Cart</Button>
+                    </Link>
+                  ) : loading ? (
+                    <div className="cutomize-btn">
+                      <Button>Loading...</Button>
+                    </div>
+                  ) : (
+                    <div className="cutomize-btn" onClick={addToCart}>
+                      <Button>Add To Cart</Button>
+                    </div>
+                  )}
+                </div>
+                <div className="extra-details">
+                  <div className="safe-payment">
+                    <span className="icon">
+                      <AiOutlineSafety />
+                    </span>
+                    <span className="text">Safe payment</span>
+                  </div>
+                  <div className="fast-delivery">
+                    <span className="icon">
+                      <FiTruck />
+                    </span>
+                    <span className="text">
+                      Fast deliveries around the world
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-						<div className="mid-slider">
-							{product.type === 'single' ? <ProductSlider data={product.feature_image} /> : null}
-						</div>
-						<div className="bottom">
-							<div className="description">
-								<div className="left">
-									<h4 className="product-desc-title">Product Description</h4>
-									<div className="description-text">{ReactHtmlParser(product.long_descript)}</div>
-								</div>
-								<div className="right">
-									<h4 className="product-desc-title">Features</h4>
-									<div className="description-text">{ReactHtmlParser(product.product_feature)}</div>
-								</div>
-							</div>
+            <div className="mid-slider">
+              {product.type === "single" ? (
+                <ProductSlider data={product.feature_image} />
+              ) : null}
+            </div>
+            <div className="bottom">
+              <div className="description">
+                <div className="left">
+                  <h4 className="product-desc-title">Product Description</h4>
+                  <div className="description-text">
+                    {ReactHtmlParser(product.long_descript)}
+                  </div>
+                </div>
+                <div className="right">
+                  <h4 className="product-desc-title">Features</h4>
+                  <div className="description-text">
+                    {ReactHtmlParser(product.product_feature)}
+                  </div>
+                </div>
+              </div>
 
-							<div className="add-to-basket">
-								<div className="img">
-									<img
-										src={
-											Array.isArray(product.product_thumbnail)
-												? product.product_thumbnail[0]
-												: product.product_thumbnail
-										}
-										alt=""
-									/>
-								</div>
-								<div className="product-details">
-									<div className="product-title">
-										<div className="product-name">{product.product_name}</div>
-									</div>
-									<div className="extra-customization">0 mth+/Mixed colors</div>
-									<div className="price">
-										<div className="previous">{product.price}</div>
-										<div className="latest">{product.total_price} </div>
-									</div>
-									<div className="add-to-basket-btn">
-										{product.type !== 'single' ? (
-											localStorage.getItem('ts-token') ? (
-												<div
-													className="cutomize-btn"
-													onClick={() => {
-														productStateDispatch({
-															type: PACKAGE_SIDEBAR,
-															payload: 'active',
-														});
-													}}
-												>
-													<Button>Customize Package</Button>
-												</div>
-											) : (
-												<div className="cutomize-btn" onClick={addToCart}>
-													<Button>Customize Package</Button>
-												</div>
-											)
-										) : isProductAdded ? (
-											<Link to="/checkout" className="cutomize-btn">
-												<Button>Added, Go To Cart</Button>
-											</Link>
-										) : loading ? (
-											<div className="cutomize-btn">
-												<Button>Loading...</Button>
-											</div>
-										) : (
-											<div className="cutomize-btn" onClick={addToCart}>
-												<Button>Add To Cart</Button>
-											</div>
-										)}
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			) : (
-				<div className="loading"></div>
-			)}
-		</ProductContext.Provider>
-	);
+              {console.log(product.product_thumbnail)}
+
+              <div className="add-to-basket">
+                <div className="img">
+                  <img
+                    src={
+                      Array.isArray(product.product_thumbnail)
+                        ? product.product_thumbnail[0]
+                        : product.product_thumbnail
+                    }
+                    alt=""
+                  />
+                </div>
+                <div className="product-details">
+                  <div className="product-title">
+                    <div className="product-name">{product.product_name}</div>
+                  </div>
+                  <div className="extra-customization">0 mth+/Mixed colors</div>
+                  <div className="price">
+                    <div className="previous">{product.price}</div>
+                    <div className="latest">{product.total_price} </div>
+                  </div>
+                  <div className="add-to-basket-btn">
+                    {product.type !== "single" ? (
+                      localStorage.getItem("ts-token") ? (
+                        <div
+                          className="cutomize-btn"
+                          onClick={() => {
+                            productStateDispatch({
+                              type: PACKAGE_SIDEBAR,
+                              payload: "active",
+                            });
+                          }}
+                        >
+                          <Button>Customize Package</Button>
+                        </div>
+                      ) : (
+                        <div className="cutomize-btn" onClick={addToCart}>
+                          <Button>Customize Package</Button>
+                        </div>
+                      )
+                    ) : isProductAdded ? (
+                      <Link to="/checkout" className="cutomize-btn">
+                        <Button>Added, Go To Cart</Button>
+                      </Link>
+                    ) : loading ? (
+                      <div className="cutomize-btn">
+                        <Button>Loading...</Button>
+                      </div>
+                    ) : (
+                      <div className="cutomize-btn" onClick={addToCart}>
+                        <Button>Add To Cart</Button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="loading"></div>
+      )}
+    </ProductContext.Provider>
+  );
 }

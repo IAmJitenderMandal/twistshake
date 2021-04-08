@@ -10,6 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
+import ReactParser from "react-html-parser";
+
 // distributor form data
 export default function Contact() {
   const [data, setData] = useState([]);
@@ -18,6 +20,8 @@ export default function Contact() {
       setData(res.data.pages["contact"]);
     });
   }, []);
+
+  console.log(data);
 
   const [distributorCompany, setDisributorCompany] = useState("");
   const [distributorCountry, setDistributorCountry] = useState("");
@@ -111,19 +115,18 @@ export default function Contact() {
         </div>
         <div className="right">
           <div className="content" id={`para0`}>
-            <p className="para-title">contact information</p>
+            <p className="para-title">
+              {data.length > 0 && data[0].page_sub_title}
+            </p>
             <div className="address">
-              Twistshake of Sweden AB Örjansgränd 1 721 32 Västerås Sweden
-              <br></br>
-              service@twistshake.com
+              {ReactParser(data.length > 0 && data[0].page_subtitle_content)}
             </div>
           </div>
 
           <div className="form" id={`para1`}>
-            <h3>contact us</h3>
+            <h3>{data.length > 0 && data[1].page_sub_title}</h3>
             <p>
-              We are happy to hear from you and will get back to you as soon as
-              possible!
+              {ReactParser(data.length > 0 && data[1].page_subtitle_content)}
             </p>
             <form onSubmit={handleContactUsSubmit}>
               <div className="form-element-group common">
@@ -198,10 +201,10 @@ export default function Contact() {
           </div>
           <div className="form-1">
             <h3 className="form-1-title" id={`para2`}>
-              Would you like to become a distributor?
+              {data.length > 0 && data[2].page_sub_title}
             </h3>
             <p className="sub-title">
-              Fill in the form below and we will contact you.
+              {ReactParser(data.length > 0 && data[2].page_subtitle_content)}
             </p>
             <form onSubmit={handleDistSubmit}>
               <div className="element-container">
