@@ -435,3 +435,11 @@
     }
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  .App {
+    .live-stream-shopping {
+      background-size: contain;
+    }
+  }
+}

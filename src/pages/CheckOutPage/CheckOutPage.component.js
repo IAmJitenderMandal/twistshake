@@ -273,7 +273,6 @@ function CheckOutPage() {
       setalternate_phone(text);
     }
     if (e.target.id.toLowerCase() === "shipping_charge_city".toLowerCase()) {
-      console.log(e.target.value);
       setshipping_charge_city(e.target.value);
 
       var res = e.target.value.split("-");

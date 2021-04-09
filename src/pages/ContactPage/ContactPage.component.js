@@ -21,8 +21,6 @@ export default function Contact() {
     });
   }, []);
 
-  console.log(data);
-
   const [distributorCompany, setDisributorCompany] = useState("");
   const [distributorCountry, setDistributorCountry] = useState("");
   const [distributorName, setDistributorName] = useState("");

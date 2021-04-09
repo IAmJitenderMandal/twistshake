@@ -8,7 +8,6 @@ export default function CustomerServiceHero() {
         <div className="left">
           <div className="primary-text">CUSTOMER SERVICE</div>
           <div className="welcome-text">Welcome to our customer service</div>
-          <div className="email">SERVICE@TWISTSHAKE.COM</div>
         </div>
         <div className="right">
           <h2 className="hero-text">Welcome to our customer service</h2>

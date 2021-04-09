@@ -65,7 +65,6 @@ export default function OrdersPage() {
             {orders && orders.length > 0 ? (
               orders.map((order, key) => (
                 <tr key={key}>
-                  {console.log("insider")}
                   <td>
                     <Link to={`/myaccount/order-details/${order.id}`}>
                       #{order.id}

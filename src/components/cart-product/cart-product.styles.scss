@@ -16,6 +16,8 @@
 
       img {
         width: 100px;
+        height: 100px;
+        object-fit: contain;
       }
     }
 
@@ -61,10 +63,10 @@
           cursor: pointer;
           position: relative;
 
-          h5{
+          h5 {
             font-weight: normal;
             font-size: 12px;
-            .direction-icon{
+            .direction-icon {
               font-size: 10px;
             }
           }
