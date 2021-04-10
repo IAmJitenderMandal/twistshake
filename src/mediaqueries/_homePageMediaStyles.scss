@@ -33,15 +33,15 @@
 
               .round-badge {
                 font-size: 0.8rem;
-                width: 35px;
-                height: 35px;
+                width: 30px;
+                height: 30px;
                 min-height: auto;
               }
             }
 
             .shipping-type {
               .rectangle-badge {
-                font-size: 0.7rem;
+                font-size: 0.6rem;
               }
             }
           }
@@ -235,6 +235,16 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .App {
+    .best-seller-slider {
+      .slick-prev {
+        left: 82% !important;
       }
     }
   }

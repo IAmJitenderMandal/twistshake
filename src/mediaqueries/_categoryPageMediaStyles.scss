@@ -14,11 +14,16 @@
   }
 }
 
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 600px) {
   .App {
     .category-page {
-      .text-content {
-        // left: 50% !important;
+      .hero-img-bg {
+        .text-content {
+          top: 20%;
+          .category-desc {
+            font-size: 3.5vw;
+          }
+        }
       }
     }
   }

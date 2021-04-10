@@ -50,7 +50,9 @@ export default function HeroBackground({
             <h2 className={"title"} style={{ color: heroBgTitleColor }}>
               {heroBgTitle}
             </h2>
-            <p style={{ color: heroBgContentColor }}>{homeBgContent}</p>
+            <p className="category-desc" style={{ color: heroBgContentColor }}>
+              {homeBgContent}
+            </p>
           </div>
         </div>
       ) : mobileView ? (
